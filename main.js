@@ -28,9 +28,13 @@ function criarLista(){
 
     let tabela = "<tr><td>Categoria</td><td>Valor</td><td>Descricao</td></tr>";
     for(let i = 0; i<= (dadosLista.length-1);i++){
-        tabela += "<tr><td>" + dadosLista[i] + "<td><button class='btn'editar(this.parentNode.parentNode.rowIndex)'>Editar</button><button class='btn' onclick='excluir(this.parentNode.parentNode.rowIndex)'>Excluir</button></td></tr>"; 
+        tabela += "<tr><td>" + dadosLista[i] + "</td><td><button class='btn' onclick='excluir(this.parentNode.parentNode.rowIndex)'>Excluir</button></td></tr>";
         document.getElementById('tabela').innerHTML = tabela;          
     }
 }
-
+function excluir(i){  //parâmetro i
+    dadosLista.splice((i-1), 1);   //método da array para excluir ou editar
+    document.getElementById('tabela').deleteRow(i);
+    
+    }
 
