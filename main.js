@@ -23,10 +23,13 @@ function salvardados(){
        document.getElementById("valor").value = "";
        document.getElementById("descricao").value = "";
     }
+    else{
+        alert('Favor informar os campos!');
+    }
 }
 function criarLista(){
 
-    let tabela = "<tr><td>Categoria</td><td>Valor</td><td>Descricao</td></tr>";
+    let tabela = "<tr><td>Valor</td></tr>";
     for(let i = 0; i<= (dadosLista.length-1);i++){
         tabela += "<tr><td>" + dadosLista[i] + "</td><td><button class='btn' onclick='excluir(this.parentNode.parentNode.rowIndex)'>Excluir</button></td></tr>";
         document.getElementById('tabela').innerHTML = tabela;          
