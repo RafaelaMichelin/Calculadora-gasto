@@ -28,9 +28,10 @@ function salvardados(){
     }
 }
 function criarLista(){
-
+    
     let tabela = "<tr><td>Valor</td></tr>";
-    for(let i = 0; i<= (dadosLista.length-1);i++){
+    for(let i = 0; i<= (dadosLista.length);i++){
+        
         tabela += "<tr><td>" + dadosLista[i] + "</td><td><button class='btn' onclick='excluir(this.parentNode.parentNode.rowIndex)'>Excluir</button></td></tr>";
         document.getElementById('tabela').innerHTML = tabela;          
     }
